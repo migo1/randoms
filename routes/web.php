@@ -15,9 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::get('/products', 'ProductController@index')->name('products');
+Route::get('/voucher/{product_id}','ProductController@voucher')->name('voucher');
+Route::get('/checkout/{product_id}', 'ProductController@checkout')->name('checkout');
+
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('chart', 'ChartController@index');
+
+
 Route::resource('clients', 'ClientController');
 Route::resource('files', 'FileController');
+
+
