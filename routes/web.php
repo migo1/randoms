@@ -34,4 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('clients', 'ClientController');
 Route::resource('files', 'FileController');
 
+Route::resource('cal', 'GoogleCalendarController');
+Route::get('oauth', 'GoogleCalendarController@oauth');
+
 
