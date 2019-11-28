@@ -21,6 +21,8 @@ Route::get('/products', 'ProductController@index')->name('products');
 Route::get('/voucher/{product_id}','ProductController@voucher')->name('voucher');
 Route::get('/checkout/{product_id}', 'ProductController@checkout')->name('checkout');
 Route::resource('documents', 'DocumentController');
+Route::resource('tags', 'TagController');
+
 
 Auth::routes();
 
@@ -36,5 +38,7 @@ Route::resource('files', 'FileController');
 
 Route::resource('cal', 'GoogleCalendarController');
 Route::get('oauth', 'GoogleCalendarController@oauth');
+
+
 
 
